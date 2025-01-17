@@ -1,0 +1,225 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Setting Variables for Dessign */
+  --white: #f2f2f2;
+  --darkBlue: #161d41;
+  --blue: #0B4584;
+  --teal: #1a9694;
+  --orange: #d59511;
+
+  --border-color: var(--white);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  color: var(--white);
+  margin: 0;
+}
+
+
+.navBar {
+  /* Sticks to top when scrolled past */
+  position: sticky;
+  top: 0;
+  background-color: var(--darkBlue);
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  /* Positions to the third layer of the view */
+  z-index: 3;
+}
+
+.navBar img {
+  width: 10%;
+}
+
+.navBar a{
+  padding: 10px;
+  color: white;
+  /* Getting rid of the underline */
+  text-decoration: none;
+}
+
+a.border-slide {
+  position: relative;
+  display: inline-block;
+}
+
+a.border-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+
+  border-bottom: yellow solid 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease-in-out;
+}
+
+a.border-slide:focus::before,
+a.border-slide:hover::before {
+  transform: scaleX(1);
+}
+
+.navBar span{
+  display: flex;
+  /* Centers all child elements horizantly */
+  justify-content: center;
+  /* Center of the parent container vertacly */
+  margin: auto;
+  /* Alighns all child elements into compact and on the y axis */
+  align-items: center;
+  /* Allows text to go around it like a newspaper */
+  float: right;
+  padding-right: 50px;
+}
+
+/* Form Section */
+
+section {
+  position: relative;
+}
+
+section h1 {
+  color: black;
+  text-align: center;
+  font-size: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+input, textarea {
+  border: black solid 2px;
+  margin-bottom: 1rem;
+  padding: .3rem;
+  border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+textarea {
+  margin-bottom: 1rem;
+}
+
+button {
+  color: blacK;
+  border: black solid 2px;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.slide {
+  position: relative;
+  transition: color 300ms ease-in-out;
+}
+
+.slide:hover,
+.slide:focus {
+  color: white;
+}
+
+.slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+
+  background-color: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease-in-out;
+}
+
+.slide:hover::before, 
+.slide:focus::before {
+  transform: scaleX(1);
+}
+
+/* Footer Section */
+
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  background-color: var(--darkBlue);
+  background: (to left, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+footer * {
+  margin: auto;
+  color: var(--white);
+  text-decoration: none;
+}
+
+footer img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 25%;
+}
+
+footer p {
+  padding-bottom: 5px;
+}
+
+footer hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--orange);
+  margin: auto;
+  margin-top: 15px;
+  padding: 5px;
+  width: 30%;
+}
+
+.footerNav {
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.footerNav a {
+  padding: 10px;
+}

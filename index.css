@@ -1,0 +1,405 @@
+/* Imports Roboto Condensed & Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Setting Variables for Dessign */
+  --white: #f2f2f2;
+  --darkBlue: #161d41;
+  --blue: #0B4584;
+  --teal: #1a9694;
+  --orange: #d59511;
+
+  --border-color: var(--white);
+}
+
+body {
+  background-color: var(--darkBlue);
+  /* Setting the defalt text color */
+  color: white;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 64px;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+
+/* Tags */
+
+#bold {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+#orange {
+  color: var(--orange);
+}
+
+/* Nav Bar */
+
+.navBar {
+  /* Sticks to top when scrolled past */
+  position: sticky;
+  top: 0;
+  background-color: var(--darkBlue);
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  /* Positions to the third layer of the view */
+  z-index: 3;
+}
+
+.navBar img {
+  width: 10%;
+}
+
+.navBar a{
+  padding: 10px;
+  color: white;
+  /* Getting rid of the underline */
+  text-decoration: none;
+}
+
+a.border-slide {
+  position: relative;
+  display: inline-block;
+}
+
+a.border-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+
+  border-bottom: yellow solid 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease-in-out;
+}
+
+a.border-slide:focus::before,
+a.border-slide:hover::before {
+  transform: scaleX(1);
+}
+
+
+.navBar span{
+  display: flex;
+  /* Centers all child elements horizantly */
+  justify-content: center;
+  /* Center of the parent container vertacly */
+  margin: auto;
+  /* Alighns all child elements into compact and on the y axis */
+  align-items: center;
+  /* Allows text to go around it like a newspaper */
+  float: right;
+  padding-right: 50px;
+}
+
+/* Hero Section */
+
+.Photo {
+  /* Positions the element relative to its original position but can be adjusted (Top, Bottom, Left, Right) */
+  position: relative;
+  text-align: center;
+}
+
+.Photo img {
+  opacity: 0.5;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.center {
+  width: 50%;
+  font-size: 40px;
+  /* Positioned relative to the nearest positioned ancestor */
+  position: absolute;
+  /* Positioned in the right spot */
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center h1 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.center p {
+  font-size: 60px;
+  margin: 0;
+}
+
+.Photo p {
+  position: absolute;
+}
+
+.Bulk {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+/* Key Ideas */
+
+.left {
+  /* Makes all child elements stay in the same box */
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
+  position: relative;
+}
+
+.right {
+  /* Makes all child elements stay in the same box */
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
+}
+
+.right div{
+  size: 45px;
+  width: 50%;
+  margin: auto;
+}
+
+.left div{
+  width: 50%;
+  margin: auto;
+}
+
+.left img {
+  float: left;
+  width: 40%;
+  height: auto;
+}
+
+.right img {
+  float: right;
+  width: 40%;
+  height: auto;
+}
+
+/* Text for sections */
+
+.shadow {
+  /* allows it to move */
+  position: absolute;
+  color: var(--white);
+  opacity: 0.2;
+  font-size: 50px;
+  transform: translate(-5%, -30%);
+  /* Set Font */
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.button {
+  /* Sets the color for the button */
+  background-color: transparent;
+  color: var(--white);
+  /* Creates the border */
+  border: var(--white), solid, 2px;
+  /* Creates the curve of the button */
+  border-radius: 55px;
+  /* Creates the space inside the button */
+  padding: 12px;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+
+  transition: color 300ms ease-in-out;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--white);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease-in-out;
+}
+
+.button:hover::before,
+.button:focus::before {
+  transform: scaleX(1);
+}
+
+.button:hover {
+  z-index: 3;
+  color: black;
+}
+
+/* Industry Space */
+
+.Idustry {
+  background-color: var(--white);
+  color: black;
+}
+
+.processing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center
+}
+
+.processing p {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.titles {
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 70%;
+  padding: 0;
+  z-index: 2;
+}
+
+.titles li {
+  height: 241px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 174px;
+  margin: 20px;
+  padding: 5px 15px;
+  background-color: var(--white);
+  border: #161d41, 3px, solid;
+}
+
+.titles p {
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.titles img {
+  width: auto;
+}
+
+/* History section */
+
+.historyBG {
+  background-color: var(--darkBlue);
+  position: relative;
+  transform: translate(0, -15%);
+}
+
+.history {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+}
+
+.historyOverlap {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: transparent;
+  border: var(--orange) 5px, solid;
+  width: 30%;
+  transform: translate(20%, -600px);
+  color: var(--white);
+  padding: 50px;
+  z-index: 5;
+}
+
+/* Footer Section */
+
+footer {
+  width: 100%;
+  position: absolute;
+  transform: translate(0, -90%);
+  background-color: var(--darkBlue);
+  background: (to left, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+footer * {
+  margin: auto;
+  color: var(--white);
+  text-decoration: none;
+}
+
+footer img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 25%;
+}
+
+footer p {
+  padding-bottom: 5px;
+}
+
+footer hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--orange);
+  margin: auto;
+  margin-top: 15px;
+  padding: 5px;
+  width: 30%;
+}
+
+.footerNav {
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.footerNav a {
+  padding: 10px;
+}
